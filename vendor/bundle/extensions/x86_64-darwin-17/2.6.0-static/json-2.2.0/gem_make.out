@@ -1,0 +1,13 @@
+current directory: /Users/koheiobata/PORME/code/fukurikun/vendor/bundle/gems/json-2.2.0/ext/json
+/Users/koheiobata/.rbenv/versions/2.6.2/bin/ruby -I /Users/koheiobata/.rbenv/versions/2.6.2/lib/ruby/2.6.0 -r ./siteconf20190413-84558-st69h4.rb extconf.rb
+creating Makefile
+
+current directory: /Users/koheiobata/PORME/code/fukurikun/vendor/bundle/gems/json-2.2.0/ext/json
+make "DESTDIR=" clean
+
+current directory: /Users/koheiobata/PORME/code/fukurikun/vendor/bundle/gems/json-2.2.0/ext/json
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+current directory: /Users/koheiobata/PORME/code/fukurikun/vendor/bundle/gems/json-2.2.0/ext/json
+make "DESTDIR=" install

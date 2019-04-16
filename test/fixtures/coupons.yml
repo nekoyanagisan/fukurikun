@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  category: MyString
+  publisher: MyString
+  detail: MyText
+  start_date: 2019-04-12
+  end_date: 2019-04-12
+
+two:
+  category: MyString
+  publisher: MyString
+  detail: MyText
+  start_date: 2019-04-12
+  end_date: 2019-04-12

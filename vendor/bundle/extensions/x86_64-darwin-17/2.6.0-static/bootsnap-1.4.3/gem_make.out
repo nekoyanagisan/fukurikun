@@ -1,0 +1,15 @@
+current directory: /Users/koheiobata/PORME/code/fukurikun/vendor/bundle/gems/bootsnap-1.4.3/ext/bootsnap
+/Users/koheiobata/.rbenv/versions/2.6.2/bin/ruby -I /Users/koheiobata/.rbenv/versions/2.6.2/lib/ruby/2.6.0 -r ./siteconf20190412-62595-1pe1y1o.rb extconf.rb
+creating Makefile
+
+current directory: /Users/koheiobata/PORME/code/fukurikun/vendor/bundle/gems/bootsnap-1.4.3/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/koheiobata/PORME/code/fukurikun/vendor/bundle/gems/bootsnap-1.4.3/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/koheiobata/PORME/code/fukurikun/vendor/bundle/gems/bootsnap-1.4.3/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20190412-62595-1eb5ge9/bootsnap

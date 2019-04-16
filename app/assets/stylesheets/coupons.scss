@@ -1,0 +1,47 @@
+// Place all the styles related to the coupons controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com
+
+/* grobal設定 */
+
+body {
+  margin: 8px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* part設定 */
+
+/* index */
+
+.coupon-area {
+  margin-top: 0;
+  margin-bottom: 100px;
+}
+
+.coupon-thumbnail {
+  width: 49%;
+  height: auto;
+  display: inline-block;
+
+  img {
+    border-radius: 12px;
+  }
+}
+
+/* show */
+
+.usable-date {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+.more-details {
+  text-align: center;
+}

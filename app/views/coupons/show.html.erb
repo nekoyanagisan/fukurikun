@@ -1,0 +1,17 @@
+<%= image_tag @coupon.image.to_s %>
+
+<div class="usable-date">
+  <%= @coupon.start_date %> ~ <%= @coupon.end_date %>
+</div>
+
+<p>クーポンを使う</p>
+
+<div class="more-details">
+  <span>ご利用条件</span>
+  <%= link_to @coupon.publisher do %>
+    <span>その他のクーポン</span>
+  <% end %>
+  <%= link_to "https://www.google.com/maps/search/#{@coupon.publisher.name}/", target: :_blank do %>
+    <span>付近の店舗</span>
+  <% end %>
+</div>

@@ -1,0 +1,44 @@
+<%= form_with(model: user, url: new_user_path, local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <div>
+      <%= link_to_add_association 'カテゴリーを追加', form, :category_users,
+        data: {
+          association_insertion_node: '#detail-association-insertion-point',
+          association_insertion_method: 'append' }
+      %>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>
+          </th>
+          <th>
+          </th>
+        </tr>
+      </thead>
+      <tbody id='detail-association-insertion-point'>
+        <div>
+          <%= form.fields_for :category_users do |od| %>
+            <%= render 'category_user_fields', form: od %>
+          <% end %>
+        </div>
+      </tbody>
+    </table>
+  </div>
+
+  <div>
+    <%= form.submit '登録' %>
+  </div>
+<% end %>
