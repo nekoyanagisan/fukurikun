@@ -25,11 +25,11 @@
 
     <ul class="horizontal-list">
       <% @categories.each do |category| %>
-        <li>
-          <%= link_to category do %>
+        <%= link_to category do %>
+          <li>
             <%= category.name %>
-          <% end %>
-        </li>
+          </li>
+        <% end %>
       <% end %>
     </ul>
 
@@ -40,12 +40,18 @@
       </li>
       <li>
       </li>
+      <%= link_to root_path do %>
+        <li>
+          <p>home</p>
+        </li>
+      <% end %>
       <li>
       </li>
-      <li>
-      </li>
-      <li>
-      </li>
+      <%= link_to profiles_path do %>
+        <li>
+          <p>menu</p>
+        </li>
+      <% end %>
     </ul>
 
   </body>
