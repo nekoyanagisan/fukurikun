@@ -2,8 +2,8 @@
 
 one:
   category: one
-  user: one
+  profile: one
 
 two:
   category: two
-  user: two
+  profile: two

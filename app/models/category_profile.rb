@@ -1,6 +1,6 @@
-class CategoryUser < ApplicationRecord
+class CategoryProfile < ApplicationRecord
   belongs_to :category
-  belongs_to :user
+  belongs_to :profile
 
   def selectable_categories
     Category.all

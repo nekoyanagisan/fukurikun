@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class CategoryUserTest < ActiveSupport::TestCase
+class CategoryProfileTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

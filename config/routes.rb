@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+  resources :profiles
   resources :publishers
   devise_for :users
-  resources :users
   resources :categories
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

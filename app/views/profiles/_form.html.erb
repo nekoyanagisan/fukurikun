@@ -1,10 +1,10 @@
-<%= form_with(model: user, url: users_path, local: true) do |f| %>
-  <% if user.errors.any? %>
+<%= form_with(model: profile, local: true) do |form| %>
+  <% if profile.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
 
       <ul>
-      <% user.errors.full_messages.each do |message| %>
+      <% profile.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -13,7 +13,7 @@
 
   <div>
     <div>
-      <%= link_to_add_association 'カテゴリーを追加', f, :category_users ,
+      <%= link_to_add_association 'カテゴリーを追加', form, :category_profiles ,
         data: {
           association_insertion_node: '#detail-association-insertion-point',
           association_insertion_method: 'append' }
@@ -30,15 +30,15 @@
       </thead>
       <tbody id='detail-association-insertion-point'>
         <div>
-          <%= f.fields_for :category_users do |od| %>
-            <%= render 'category_user_fields', form: od %>
+          <%= form.fields_for :category_profiles do |od| %>
+            <%= render 'category_profile_fields', form: od %>
           <% end %>
         </div>
       </tbody>
     </table>
   </div>
 
-  <div>
-    <%= f.submit '登録' %>
+  <div class="actions">
+    <%= form.submit %>
   </div>
 <% end %>
