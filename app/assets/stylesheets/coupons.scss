@@ -16,6 +16,65 @@ img {
 /* part設定 */
 
 /* index */
+body{
+    font-family:-apple-system,’Lucida Grande’,‘Helvetica Neue’,’Hiragino Kaku Gothic ProN’,‘游ゴシック’,’メイリオ’,meiryo,sans-serif;
+ 
+    -webkit-text-size-adjust: 100%;
+}
+ 
+.container{
+    max-width: 400px;
+    margin: auto;
+}
+ 
+.tabContainer {
+    overflow-x: auto;
+}
+.tabContainer::-webkit-scrollbar {
+    height: 5px;
+}
+.tabContainer::-webkit-scrollbar-track {
+    background: #000;
+}
+.tabContainer::-webkit-scrollbar-thumb {
+    background: #000;
+}
+ 
+.tab{
+    display: table;
+    margin-top: 20px;
+}
+ 
+.tab__button{
+    display: table-cell;
+    text-align: center;
+    background-color: #000;
+    vertical-align: middle;
+    border: 2px solid white;
+    border-bottom-width: 4px;
+    min-width: 80px;
+}
+ 
+.tab__button.active{
+    border-bottom: none;
+}
+ 
+.tab__button a{
+    padding: 10px;
+    color: #fff;
+    display: block;
+    text-decoration: none;
+    font-size: 12px;
+}
+ 
+.contents__content{
+    background-color: #ccc;
+    text-align: center;
+}
+
+.contents__content div{
+    clear: left;
+}
 
 .coupon-area {
   margin-top: 0;
@@ -45,3 +104,4 @@ p {
 .more-details {
   text-align: center;
 }
+

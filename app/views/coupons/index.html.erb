@@ -1,7 +1,26 @@
-<% @coupons.each do |coupon| %>
-  <div class="coupon-thumbnail">
-    <%= link_to coupon do %>
-      <%= image_tag coupon.image.to_s %>
+<div class="container">
+  <div class="tabContainer">
+    <div class="tab">
+      <% @selected_categories.each do |category| %>
+        <div class="tab__button"><a href="#"><%= category.name %></a></div>
+        <!-- 一つ目にclassでactive追加しなくては -->
+      <% end %>
+      <script>
+        $(".tab__button:first-child").addClass("active");
+      </script>
+    </div>
+  </div>
+  <div class="contents">
+    <% @selected_categories.each do |category| %>
+      <div class="contents__content">
+        <% category.coupons.each do |coupon| %>
+          <div class="coupon-thumbnail">
+            <%= link_to coupon do %>
+              <%= image_tag coupon.image.to_s %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
     <% end %>
   </div>
-<% end %>
+</div>
