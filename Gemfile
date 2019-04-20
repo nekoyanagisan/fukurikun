@@ -55,6 +55,8 @@ gem 'cocoon'
 gem 'rb-readline'
 
 gem 'jquery-rails'
+# use jquery-turbolinks
+gem 'jquery-turbolinks'
 
 # line messaging api
 gem 'line-bot-api'

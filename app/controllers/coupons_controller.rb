@@ -5,6 +5,7 @@ class CouponsController < ApplicationController
   # GET /coupons.json
   def index
     @coupons = Coupon.all
+    @selected_categories = current_user.profile.categories
   end
 
   # GET /coupons/1
