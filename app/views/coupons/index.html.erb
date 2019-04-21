@@ -11,21 +11,18 @@
     </div>
   </div>
 
-  <ul class="publishers-horizontal-list">
-    <% @selected_categories.each do |category| %>
-      <% category.publishers.each do |publisher| %>
-        <li>
-          <%= link_to publisher do %>
-            <%= image_tag publisher.image.to_s %>
-          <% end %>
-        </li>
-      <% end %>
-    <% end %>
-  </ul>
-
   <div class="contents">
     <% @selected_categories.each do |category| %>
       <div class="contents__content">
+        <ul class="publishers-horizontal-list">
+          <% category.publishers.each do |publisher| %>
+            <li>
+              <%= link_to publisher do %>
+                <%= image_tag publisher.image.to_s %>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
         <% category.coupons.each do |coupon| %>
           <div class="coupon-thumbnail">
             <%= link_to coupon do %>
