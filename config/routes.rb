@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :publishers
   devise_for :users
   resources :categories
+  resources :selected_categories
+  resources :clipped_coupons
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :coupons
