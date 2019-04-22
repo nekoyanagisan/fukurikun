@@ -1,20 +1,3 @@
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @profiles.each do |profile| %>
-      <tr>
-        <td><%= link_to 'Show', profile %></td>
-        <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br />
+<%= link_to 'タブ管理設定', edit_selected_category_path(@profile.id) %>
 
 <%= link_to '戻る', :back %>
