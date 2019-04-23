@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_17_053740) do
+ActiveRecord::Schema.define(version: 2019_04_23_054751) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -62,6 +62,15 @@ ActiveRecord::Schema.define(version: 2019_04_17_053740) do
     t.index ["user_id"], name: "index_category_users_on_user_id"
   end
 
+  create_table "coupon_profiles", force: :cascade do |t|
+    t.integer "coupon_id"
+    t.integer "profile_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["coupon_id"], name: "index_coupon_profiles_on_coupon_id"
+    t.index ["profile_id"], name: "index_coupon_profiles_on_profile_id"
+  end
+
   create_table "coupons", force: :cascade do |t|
     t.text "detail"
     t.date "start_date"
@@ -98,6 +107,11 @@ ActiveRecord::Schema.define(version: 2019_04_17_053740) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

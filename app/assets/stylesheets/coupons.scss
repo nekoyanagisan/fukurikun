@@ -22,66 +22,6 @@ li {
   width: 240px;
 }
 
-.horizontal-list {
-  overflow-x: auto;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
-  padding: 0;
-  margin: 0;
-
-  li {
-    /* 横スクロール用 */
-    display: inline-block;
-
-    margin: 12px;
-    margin-bottom: 24px;
-  }
-}
-
-.bottom-menu {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 10;
-  width: 100%;
-  height: 100px;
-  background-color: #fff;
-  margin: 0;
-  padding: 0;
-
-  li {
-    display: inline-block;
-    height: 100%;
-    width: 20%;
-    margin: -3.0px;
-  }
-}
-
-/* category show */
-.publishers-horizontal-list {
-  overflow-x: auto;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
-  padding: 0;
-  margin: 0;
-
-  li {
-    /* 横スクロール用 */
-    display: inline-block;
-
-    margin: 12px;
-    margin-bottom: 24px;
-
-    a {
-      img {
-        height: 60px;
-        width: auto;
-        border-radius: 50%;
-      }
-    }
-  }
-}
-
 /* part設定 */
 
 /* index */
@@ -135,22 +75,37 @@ body{
     text-decoration: none;
     font-size: 12px;
 }
- 
+
 .contents__content{
-    background-color: #ccc;
     text-align: center;
 }
 
-.contents__content div{
-    clear: left;
-}
+/* coupons index */
+.publishers-horizontal-list {
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  padding: 0;
+  margin: 0;
 
-.coupon-area {
-  margin-top: 0;
-  margin-bottom: 100px;
+  li {
+    /* 横スクロール用 */
+    display: inline-block;
+    margin: 12px;
+
+    a {
+
+      img {
+        height: 60px;
+        width: auto;
+        border-radius: 50%;
+      }
+    }
+  }
 }
 
 .coupon-thumbnail {
+  clear: left;
   width: 49%;
   height: auto;
   display: inline-block;

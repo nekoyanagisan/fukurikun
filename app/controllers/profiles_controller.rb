@@ -5,6 +5,7 @@ class ProfilesController < ApplicationController
   # GET /profiles.json
   def index
     @profiles = Profile.all
+    @profile = current_user.profile
   end
 
   # GET /profiles/1
@@ -19,6 +20,7 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1/edit
   def edit
+    @profile = Profile.find(params[:id])
   end
 
   # POST /profiles
@@ -27,7 +29,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.new(profile_params)
     @profile.user_id = current_user.id
 
-    p @profile
+    p params
 
     respond_to do |format|
       if @profile.save
@@ -43,6 +45,9 @@ class ProfilesController < ApplicationController
   # PATCH/PUT /profiles/1
   # PATCH/PUT /profiles/1.json
   def update
+    @profile = Profile.find(params[:id])
+    @profile.user_id = current_user.id
+
     respond_to do |format|
       if @profile.update(profile_params)
         format.html { redirect_to @profile, notice: 'Profile was successfully updated.' }
@@ -72,6 +77,6 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(category_profiles_attributes: [:id, :category_id, :profile_id, :_destroy])
+      params.require(:profile).permit(category_ids: [], coupon_ids: [],)
     end
 end
