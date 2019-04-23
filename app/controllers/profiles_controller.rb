@@ -29,7 +29,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.new(profile_params)
     @profile.user_id = current_user.id
 
-    p @profile
+    p params
 
     respond_to do |format|
       if @profile.save
@@ -77,6 +77,6 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(category_ids: [], )
+      params.require(:profile).permit(category_ids: [], coupon_ids: [],)
     end
 end
