@@ -5,11 +5,14 @@ class CouponsController < ApplicationController
   # GET /coupons.json
   def index
     @coupons = Coupon.all
+    @selected_categories = current_user.profile.categories
   end
 
   # GET /coupons/1
   # GET /coupons/1.json
   def show
+    @clip = CouponProfile.new
+    @coupon = Coupon.find(params[:id])
   end
 
   # GET /coupons/new

@@ -12,47 +12,8 @@
   </head>
 
   <body>
-    <%= form_tag publishers_path, :method => 'get' do %>
-      <ul>
-        <li class="search-box">
-          <%= text_field_tag :search, params[:search] %>
-        </li>
-        <li>
-          <%= submit_tag "Search", :name => nil %>
-        </li>
-      </ul>
-    <% end %>
-
-    <ul class="horizontal-list">
-      <% @categories.each do |category| %>
-        <%= link_to category do %>
-          <li>
-            <%= category.name %>
-          </li>
-        <% end %>
-      <% end %>
-    </ul>
 
     <%= yield %>
-
-    <ul class="bottom-menu">
-      <li>
-      </li>
-      <li>
-      </li>
-      <%= link_to root_path do %>
-        <li>
-          <p>home</p>
-        </li>
-      <% end %>
-      <li>
-      </li>
-      <%= link_to profiles_path do %>
-        <li>
-          <p>menu</p>
-        </li>
-      <% end %>
-    </ul>
 
   </body>
 </html>
