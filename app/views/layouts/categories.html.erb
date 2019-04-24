@@ -3,25 +3,35 @@
   <head>
     <title>Fukurikun</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag    'application', 'data-turbolinks-track': 'reload' %>
+    
+
   </head>
 
   <body>
-    <%= form_tag publishers_path, :method => 'get' do %>
-      <ul>
-        <li class="search-box">
-          <%= text_field_tag :search, params[:search] %>
-        </li>
-        <li>
-          <%= submit_tag "Search", :name => nil %>
-        </li>
-      </ul>
-    <% end %>
+
+    <div class="searchbar">     　
+      <div>
+         <form action="/publishers" method="get">
+          <input 
+            class="search-box"
+            type="search" 
+            name="search" 
+            placeholder="施設・会社名を検索">
+        </form>  
+      </div>     
+        
+    
+      <div class="cancel-button">
+        <a href="/">キャンセル</a>
+      </div>
+    </div>
 
     <ul class="horizontal-list">
       <% @categories.each do |category| %>
@@ -33,26 +43,14 @@
       <% end %>
     </ul>
 
+    <div class="bottom-menu">
+      <%=react_component('Bottommenu')%>
+    </div>  
+      
+
     <%= yield %>
 
-    <ul class="bottom-menu">
-      <li>
-      </li>
-      <li>
-      </li>
-      <%= link_to root_path do %>
-        <li>
-          <p>home</p>
-        </li>
-      <% end %>
-      <li>
-      </li>
-      <%= link_to profiles_path do %>
-        <li>
-          <p>menu</p>
-        </li>
-      <% end %>
-    </ul>
+    
 
   </body>
 </html>
