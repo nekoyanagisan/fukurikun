@@ -45,7 +45,8 @@ Rails.application.configure do
   :domain => 'smtp.gmail.com',
   :user_name => "porme.business@gmail.com", #gmailアドレス
   :password => "cy7q6T0euzg%iRTX ", #gmailパスワード
-  :authentication => 'login',
+  :authentication => :plain,
+  :enable_starttls_auto => true
 }
 
   # Print deprecation notices to the Rails logger.
