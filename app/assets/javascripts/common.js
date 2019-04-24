@@ -56,6 +56,4 @@ $('.tab__button').on('click',function(e){
 
 })
 
-console.log("読み込めてる");
-
 });

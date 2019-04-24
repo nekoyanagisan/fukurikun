@@ -43,7 +43,7 @@ gem 'webpacker'
 
 # for image uploader with AWS S3
 gem 'carrierwave'
-gem 'fog'
+gem 'fog', '~> 1.38'
 
 # for admin
 gem 'activeadmin'
