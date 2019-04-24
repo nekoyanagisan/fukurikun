@@ -35,6 +35,19 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
+  #以下を追記（config.action_mailer.default_url_optionsの直下あたりがしっくりくるか）
+  config.action_mailer.delivery_method = :letter_opener_web
+
+  config.action_mailer.smtp_settings = {
+  :enable_starttls_auto => true,
+  :address => "smtp.gmail.com",
+  :port => 587,
+  :domain => 'smtp.gmail.com',
+  :user_name => "porme.business@gmail.com", #gmailアドレス
+  :password => "cy7q6T0euzg%iRTX ", #gmailパスワード
+  :authentication => 'login',
+}
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 

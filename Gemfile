@@ -6,7 +6,8 @@ ruby '2.6.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'sqlite3', groups: %w(test development), require: false
+gem 'pg', '~> 0.18.4', groups: %w(production), require: false
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -42,7 +43,7 @@ gem 'webpacker'
 
 # for image uploader with AWS S3
 gem 'carrierwave'
-gem 'fog'
+gem 'fog', '~> 1.38'
 
 # for admin
 gem 'activeadmin'
@@ -55,6 +56,8 @@ gem 'cocoon'
 gem 'rb-readline'
 
 gem 'jquery-rails'
+# use jquery-turbolinks
+gem 'jquery-turbolinks'
 
 # line messaging api
 gem 'line-bot-api'
@@ -72,6 +75,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'letter_opener_web'
 end
 
 group :test do

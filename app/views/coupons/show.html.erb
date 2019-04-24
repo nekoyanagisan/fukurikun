@@ -6,6 +6,14 @@
 
 <p>クーポンを使う</p>
 
+<div>
+  <% if current_user.profile.already_clipped?(@coupon) %>
+    <%= button_to 'クリップ取り消し', clipped_coupon_path(coupon_id: @coupon), method: :delete %>
+  <% else %>
+    <%= button_to 'クリップ', clipped_coupons_path(coupon_id: @coupon) %>
+  <% end %>
+</div>
+
 <div class="more-details">
   <span>ご利用条件</span>
   <%= link_to @coupon.publisher do %>
@@ -18,4 +26,4 @@
 
 <br />
 
-<%= link_to '戻る', :back %> 
+<%= link_to '戻る', :back, data: {"turbolinks" => false} %>

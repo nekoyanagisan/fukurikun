@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fukurikun</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag    'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <%= form_tag publishers_path, :method => 'get' do %>
+      <ul>
+        <li class="search-box">
+          <%= text_field_tag :search, params[:search] %>
+        </li>
+        <li>
+          <%= submit_tag "Search", :name => nil %>
+        </li>
+      </ul>
+    <% end %>
+
+  <%= yield %>
+
+    <div class="bottom-menu">
+      <%=react_component('Bottommenu')%>
+    </div>  
+
+    <ul class="bottom-menu">
+      <li>
+      </li>
+      <li>
+      </li>
+      <%= link_to root_path, data: {"turbolinks" => false} do %>
+        <li>
+          <p>home</p>
+        </li>
+      <% end %>
+      <%= link_to clipped_coupons_path do %>
+        <li>
+          <p>clip</p>
+        </li>
+      <% end %>
+      <%= link_to profiles_path do %>
+        <li>
+          <p>menu</p>
+        </li>
+      <% end %>
+    </ul>
+
+  </body>
+</html>
