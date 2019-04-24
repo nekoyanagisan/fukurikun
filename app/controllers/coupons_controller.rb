@@ -11,7 +11,6 @@ class CouponsController < ApplicationController
   # GET /coupons/1
   # GET /coupons/1.json
   def show
-    @clip = CouponProfile.new
     @coupon = Coupon.find(params[:id])
   end
 
