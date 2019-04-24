@@ -8,9 +8,9 @@
 
 <div>
   <% if current_user.profile.already_clipped?(@coupon) %>
-    <%= button_to 'クリップ取り消し', clipped_coupon_path(@coupon), method: :delete %>
+    <%= button_to 'クリップ取り消し', clipped_coupon_path(coupon_id: @coupon), method: :delete %>
   <% else %>
-    <%= button_to 'クリップ', clipped_coupons_path(@coupon) %>
+    <%= button_to 'クリップ', clipped_coupons_path(coupon_id: @coupon) %>
   <% end %>
 </div>
 

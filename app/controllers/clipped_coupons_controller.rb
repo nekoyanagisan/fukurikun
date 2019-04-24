@@ -4,14 +4,14 @@ class ClippedCouponsController < ApplicationController
   end
 
   def create
-    @coupon_profile = CouponProfile.new(coupon_id: params[:coupon_id], profile_id: current_user.profile.id)
-    p params
-    p @coupon_profile
-    @coupon_profile.save
+    @clipped_coupon = current_user.profile.coupon_profiles.new(coupon_id: params[:coupon_id])
+    @clipped_coupon.save
+    redirect_back(fallback_location: root_path)
   end
 
   def destroy
-    @coupon_profile = CouponProfile.find_by(coupon_id: params[:coupon_id], profile_id: current_user.profile.id)
-    @coupon_profile.destroy
+    clipped_coupon = current_user.profile.coupon_profiles.find_by(coupon_id: params[:coupon_id])
+    clipped_coupon.destroy
+    redirect_back(fallback_location: root_path)
   end
 end

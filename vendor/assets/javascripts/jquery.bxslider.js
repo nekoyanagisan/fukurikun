@@ -1604,5 +1604,4 @@ $(document).on('page:load', function($) {
     return this;
   };
 
-  })(jQuery);
-});
+})(jQuery);

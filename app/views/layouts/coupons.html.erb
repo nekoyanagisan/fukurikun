@@ -29,13 +29,16 @@
       </li>
       <li>
       </li>
-      <%= link_to root_path do %>
+      <%= link_to root_path, data: {"turbolinks" => false} do %>
         <li>
           <p>home</p>
         </li>
       <% end %>
-      <li>
-      </li>
+      <%= link_to clipped_coupons_path do %>
+        <li>
+          <p>clip</p>
+        </li>
+      <% end %>
       <%= link_to profiles_path do %>
         <li>
           <p>menu</p>

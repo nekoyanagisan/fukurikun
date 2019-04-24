@@ -7,5 +7,9 @@ CarrierWave.configure do |config|
   }
 
   config.fog_directory = 'fukurikun-image'
-  config.cache_storage = :fog
+
+  if Rails.env.production?
+    config.cache_storage = :fog
+  else
+  end
 end
